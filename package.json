@@ -2,8 +2,9 @@
 	"name": "webflow-collection-utilities",
 	"version": "0.1.0",
 	"main": "./build/index.js",
+	"browser": "./build/index.js",
 	"repository": "git@github.com:MatthewWid/Webflow-Collection-Utilities.git",
-	"author": "Matthew W. <matthew.widdi@gmail.com>",
+	"author": "Matthew W.",
 	"license": "MIT",
 	"scripts": {
 		"dev": "webpack --config ./webpack.config.js --env.development",
