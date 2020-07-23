@@ -1,0 +1,18 @@
+{
+	"name": "webflow-collection-utilities",
+	"version": "0.1.0",
+	"main": "./build/index.js",
+	"repository": "git@github.com:MatthewWid/Webflow-Collection-Utilities.git",
+	"author": "Matthew W. <matthew.widdi@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"dev": "webpack --config ./webpack.config.js --env.development",
+		"build": "webpack --config ./webpack.config.js --env.production"
+	},
+	"devDependencies": {
+		"ts-loader": "^8.0.1",
+		"typescript": "^3.9.7",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.12"
+	}
+}
