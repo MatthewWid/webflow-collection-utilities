@@ -24,5 +24,7 @@ module.exports = (env) => ({
 	output: {
 		filename: "[name].js",
 		path: path.join(BASEDIR, "./build/"),
+		library: "WebflowUtils",
+		libraryTarget: "umd",
 	},
 });
