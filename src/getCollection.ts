@@ -1,12 +1,13 @@
 import Collection from "./Collection";
+import {CLASS_COLLECTION_ROOT} from "./constants.ts";
 
-const getCollection = (selector: string): Collection | null => {
-	const element = document.querySelector<HTMLElement>(selector);
+const getCollection = (elementId: string): Collection | null => {
+	const element = document.getElementById(elementId);
 
-	if (element) {
+	if (element && element.classList.contains(CLASS_COLLECTION_ROOT)) {
 		return new Collection(element);
 	} else {
-		return null;
+		throw new Error("Element does not exist or is not a valid collection list.");
 	}
 };
 
