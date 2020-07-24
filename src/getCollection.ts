@@ -1,7 +1,7 @@
 import Collection from "./Collection";
 import {CLASS_COLLECTION_ROOT} from "./constants.ts";
 
-const getCollection = (elementId: string): Collection | null => {
+const getCollection = (elementId: string): Collection | never => {
 	const element = document.getElementById(elementId);
 
 	if (element && element.classList.contains(CLASS_COLLECTION_ROOT)) {
