@@ -3,4 +3,3 @@ class CollectionItem {
 }
 
 export default CollectionItem;
-
