@@ -5,7 +5,7 @@ const BASEDIR = path.resolve(__dirname);
 module.exports = (env) => ({
 	mode: env.production ? "production" : "development",
 	watch: !Boolean(env.production),
-	devtool: "inline-source-map",
+	devtool: env.production ? false : "inline-source-map",
 	entry: {
 		index: path.join(BASEDIR, "./src/index.ts"),
 	},
