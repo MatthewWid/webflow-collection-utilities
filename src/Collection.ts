@@ -1,26 +1,23 @@
 import CollectionItem from "./CollectionItem";
 import Filter from "./Filter";
-import DropdownFilter from "./DropdownFilter";
 import {CLASS_COLLECTION_ITEM} from "./constants";
 
 class Collection {
-	items: CollectionItem[];
+	private items: CollectionItem[];
 
-	filters: Filter[] = [];
+	private filters: Filter[] = [];
 
-	constructor(public element: HTMLElement) {
+	constructor(private element: HTMLElement) {
 		this.items = (Array.from(
 			element.getElementsByClassName(CLASS_COLLECTION_ITEM)
 		) as HTMLElement[]).map((item) => new CollectionItem(item));
 	}
 
-	addDropdownFilter = (...args: ConstructorParameters<typeof DropdownFilter>) => {
-		const dropdownFilter = new DropdownFilter(...args);
+	addFilter(filter: Filter) {
+		this.filters.push(filter);
+	}
 
-		this.filters.push(dropdownFilter);
-
-		return dropdownFilter;
-	};
+	refreshFilters() {}
 }
 
 export default Collection;
