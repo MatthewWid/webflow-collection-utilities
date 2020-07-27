@@ -1,9 +1,12 @@
 import Filter from "./Filter";
+import CollectionItem from "./CollectionItem";
 
 class DropdownFilter extends Filter {
-	constructor(private dropdown: HTMLElement) {}
+	constructor(private dropdown: HTMLElement) {
+		super();
+	}
 
-	getFilteredList(collectionList) {
+	getFilteredList(collectionList: CollectionItem[]) {
 		return collectionList;
 	}
 }

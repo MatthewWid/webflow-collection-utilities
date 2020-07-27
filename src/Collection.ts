@@ -5,8 +5,8 @@ import {CLASS_COLLECTION_ITEM} from "./constants";
 
 class Collection {
 	items: CollectionItem[];
-	
-	filters: Filter[];
+
+	filters: Filter[] = [];
 
 	constructor(public element: HTMLElement) {
 		this.items = (Array.from(
@@ -14,13 +14,13 @@ class Collection {
 		) as HTMLElement[]).map((item) => new CollectionItem(item));
 	}
 
-	addDropdownFilter = (...args): DropdownFilter | never => {
+	addDropdownFilter = (...args: ConstructorParameters<typeof DropdownFilter>) => {
 		const dropdownFilter = new DropdownFilter(...args);
 
 		this.filters.push(dropdownFilter);
 
 		return dropdownFilter;
-	}
+	};
 }
 
 export default Collection;
